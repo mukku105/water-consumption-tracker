@@ -19,7 +19,7 @@ import { Tracker } from '../tracker';
 import { ConsumptionService } from '../consumption.service';
 
 @Component({
-  selector: 'constuption-entry',
+  selector: 'consumption-entry',
   templateUrl: './consumption-entry.component.html',
   styleUrls: ['./consumption-entry.component.css']
 })

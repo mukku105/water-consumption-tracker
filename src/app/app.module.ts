@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
 import { AppComponent } from './app.component';
 import { ConsumptionDetailsComponent } from './water/consumption-details/consumption-details.component';
 import { ConsumptionEntryComponent } from './water/consumption-entry/consumption-entry.component';
@@ -12,7 +15,9 @@ import { ConsumptionEntryComponent } from './water/consumption-entry/consumption
     ConsumptionEntryComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
