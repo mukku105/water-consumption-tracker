@@ -1,0 +1,27 @@
+<p>consumption-entry works!</p>
+
+<div *ngIf="track" class="row">
+  <div class="col-md-12">
+    <h2 *ngIf="track._id">Tracker Details</h2>
+    <h2 *ngIf="!track._id">New Tracker</h2>
+  </div>
+</div>
+<div *ngIf="track" class="row">
+  <form class="col-md-12">
+    <div class="form-group">
+      <label for="track-name">Name</label>
+      <input class="form-control" name="track-name" [(ngModel)]="track.name" placeholder="Name"/>
+    </div>
+    <div class="form-group">
+      <label for="track-amount">Amount of Water Consumed</label>
+      <input class="form-control" name="track-amount" [(ngModel)]="track.amount" placeholder="0.0"/>
+    </div>
+    <div class="form-group">
+      <label for="track-date">Date</label>
+      <input class="form-control" name="track-date" [(ngModel)]="track.date" placeholder="date"/>
+    </div>
+    <button class="btn btn-primary" *ngIf="!track._id" (click)="createTracker(track)">Create</button>
+    <button class="btn btn-info" *ngIf="track._id" (click)="updateTracker(track)">Update</button>
+    <button class="btn btn-danger" *ngIf="track._id" (click)="deleteTracker(track._id)">Delete</button>
+  </form>
+</div>

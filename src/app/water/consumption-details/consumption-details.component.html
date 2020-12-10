@@ -1,0 +1,24 @@
+<p>consumption-details works!</p>
+
+<div class="row">
+  <div class="col-md-5">
+    <h2>Water consumption Tracker</h2>
+    <ul class="list-group">
+      <li class="list-group-item"
+        *ngFor="let track of trackers"
+        (click)="selectedTracker(track)"
+        [class.active]="track === selectedTracker">
+        {{track.name}}
+      </li>
+    </ul>
+    <button class="btn btn-warning" (click)="createNewTracker()">New</button>
+  </div>
+  <div class="col-md-5 col-md-offset-2">
+    <consumption-entry
+      [trackers]="selectedTracker"
+      [createHandler]="addTracker"
+      [updateHandler]="updateTracker"
+      [deleteHandler]="deleteTracker">
+    </consumption-entry>
+  </div>
+</div>
